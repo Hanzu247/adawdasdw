@@ -36,6 +36,9 @@ jobs:
       - name: Copy FLOWER folder into dist
         run: cp -r FLOWER dist/
 
+      - name: Copy CNAME into dist
+        run: cp CNAME dist/ 2>/dev/null || true
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
