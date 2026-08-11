@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  body {
+    @apply antialiased text-gray-900 bg-gray-50;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.font-cursive {
+  font-family: 'Great Vibes', cursive;
+}
+
+.font-handwriting {
+  font-family: 'Dancing Script', cursive;
+}
