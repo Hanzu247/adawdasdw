@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import { Music, Music2 } from 'lucide-react';
-import libuLibongBuwan from '../assets/libu-libong-buwan.mp3';
 
 const BackgroundMusic = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -8,9 +7,11 @@ const BackgroundMusic = () => {
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    const audio = new Audio(libuLibongBuwan);
+    const audio = new Audio();
+    audio.preload = 'none';
     audio.loop = true;
     audio.volume = 0.5;
+    audio.src = `${import.meta.env.BASE_URL}libu-libong-buwan.mp3`;
     audioRef.current = audio;
 
     // Expose a global pause function so the FLOWER page can stop this music
