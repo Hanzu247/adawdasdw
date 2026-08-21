@@ -6,7 +6,7 @@ interface LockScreenProps {
   onUnlock: () => void;
 }
 
-const PASSCODE = '081109';
+const PASSCODE = '081212';
 
 const LockScreen = ({ onUnlock }: LockScreenProps) => {
   const [input, setInput] = useState('');

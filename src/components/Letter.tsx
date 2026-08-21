@@ -124,42 +124,42 @@ const PhoneCountdown = ({ countdown, ready, onOpen }: PhoneCountdownProps) => {
         whileTap={ready ? { scale: 0.97 } : undefined}
         className={`w-[320px] rounded-[2.5rem] p-7 select-none ${ready ? 'cursor-pointer' : ''}`}
         style={{
-          background: 'rgba(18, 18, 24, 0.92)',
+          background: 'rgba(255, 240, 245, 0.95)',
           backdropFilter: 'blur(24px)',
-          boxShadow: '0 30px 70px rgba(0,0,0,0.5)',
-          border: '1px solid rgba(255,255,255,0.1)',
+          boxShadow: '0 30px 70px rgba(244, 114, 182, 0.3)',
+          border: '2px solid rgba(244, 114, 182, 0.3)',
         }}
       >
         {/* iOS Status Bar */}
         <div className="flex items-center justify-between px-1 mb-6">
-          <span className="text-white/90 text-sm font-semibold tracking-wide tabular-nums">{currentTime}</span>
+          <span className="text-pink-500 text-sm font-semibold tracking-wide tabular-nums">{currentTime}</span>
           <div className="flex items-center gap-1.5">
             {/* Signal bars */}
-            <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor" className="text-white/90">
+            <svg width="17" height="12" viewBox="0 0 17 12" fill="currentColor" className="text-pink-400">
               <rect x="0" y="7" width="3" height="5" rx="0.8" />
               <rect x="4.5" y="5" width="3" height="7" rx="0.8" />
               <rect x="9" y="3" width="3" height="9" rx="0.8" />
               <rect x="13.5" y="0" width="3" height="12" rx="0.8" opacity="0.35" />
             </svg>
             {/* Wifi */}
-            <svg width="16" height="12" viewBox="0 0 16 12" fill="currentColor" className="text-white/90">
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="currentColor" className="text-pink-400">
               <path d="M8 9.5a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" />
               <path d="M8 5.5c1.6 0 3.05.64 4.12 1.68l-1.42 1.42A4.35 4.35 0 008 7.5c-1.2 0-2.3.49-3.1 1.28L3.48 7.36A5.85 5.85 0 018 5.5z" />
               <path d="M8 1.5c2.9 0 5.55 1.17 7.45 3.07l-1.42 1.42A8.35 8.35 0 008 3.5c-2.3 0-4.4.94-5.9 2.45L.68 4.53A10.35 10.35 0 018 1.5z" />
             </svg>
             {/* Battery */}
             <div className="flex items-center">
-              <div className="w-[25px] h-[12px] rounded-[3px] border border-white/60 relative">
-                <div className="absolute inset-[2px] right-[35%] rounded-[1px] bg-white/90" />
+              <div className="w-[25px] h-[12px] rounded-[3px] border border-pink-400 relative">
+                <div className="absolute inset-[2px] right-[35%] rounded-[1px] bg-pink-400" />
               </div>
-              <div className="w-[2px] h-[5px] rounded-r bg-white/60 -ml-[1px]" />
+              <div className="w-[2px] h-[5px] rounded-r bg-pink-400 -ml-[1px]" />
             </div>
           </div>
         </div>
 
         {/* Timer Card */}
-        <div className="rounded-[1.8rem] bg-white/[0.06] border border-white/10 p-6">
-          <div className="text-center text-xs uppercase tracking-[0.25em] text-pink-300/90 font-medium mb-4">
+        <div className="rounded-[1.8rem] bg-white/70 border border-pink-200 p-6 shadow-inner">
+          <div className="text-center text-xs uppercase tracking-[0.25em] text-pink-500 font-medium mb-4">
             {ready ? 'Surprise Ready' : 'Countdown'}
           </div>
 
@@ -170,7 +170,7 @@ const PhoneCountdown = ({ countdown, ready, onOpen }: PhoneCountdownProps) => {
                 cy="140"
                 r={RING_RADIUS}
                 fill="none"
-                stroke="rgba(255,255,255,0.08)"
+                stroke="rgba(244, 114, 182, 0.15)"
                 strokeWidth="10"
               />
               <motion.circle
@@ -178,13 +178,13 @@ const PhoneCountdown = ({ countdown, ready, onOpen }: PhoneCountdownProps) => {
                 cy="140"
                 r={RING_RADIUS}
                 fill="none"
-                stroke={ready ? '#34d399' : '#f472b6'}
+                stroke={ready ? '#ec4899' : '#f472b6'}
                 strokeWidth="10"
                 strokeLinecap="round"
                 strokeDasharray={RING_CIRCUMFERENCE}
                 animate={{ strokeDashoffset: offset }}
                 transition={{ duration: 1, ease: 'linear' }}
-                style={{ filter: `drop-shadow(0 0 8px ${ready ? 'rgba(52,211,153,0.6)' : 'rgba(244,114,182,0.6)'})` }}
+                style={{ filter: `drop-shadow(0 0 8px ${ready ? 'rgba(236,72,153,0.6)' : 'rgba(244,114,182,0.6)'})` }}
               />
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -193,11 +193,11 @@ const PhoneCountdown = ({ countdown, ready, onOpen }: PhoneCountdownProps) => {
                 initial={{ opacity: 0.4, scale: 0.92 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
-                className={`text-6xl font-light tabular-nums ${ready ? 'text-emerald-300' : 'text-white'}`}
+                className={`text-6xl font-light tabular-nums ${ready ? 'text-pink-600' : 'text-pink-500'}`}
               >
                 {display}
               </motion.div>
-              <div className="text-slate-400 text-xs tracking-[0.3em] uppercase mt-2">
+              <div className="text-pink-400 text-xs tracking-[0.3em] uppercase mt-2">
                 {ready ? 'Open' : 'Seconds'}
               </div>
             </div>
@@ -205,11 +205,11 @@ const PhoneCountdown = ({ countdown, ready, onOpen }: PhoneCountdownProps) => {
 
           <div className="text-center mt-6">
             {ready ? (
-              <div className="text-emerald-300 font-medium text-sm">
+              <div className="text-pink-600 font-medium text-sm">
                 Tap anywhere to open 💝
               </div>
             ) : (
-              <div className="text-slate-300 text-sm">
+              <div className="text-pink-400 text-sm">
                 Hold on, almost there...
               </div>
             )}
