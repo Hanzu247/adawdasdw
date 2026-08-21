@@ -4,7 +4,7 @@ import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/This-make-your-day/',
+  base: '/adawdasdw/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
